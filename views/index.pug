@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    div.text-center
+        form(class="form-signin" method="POST" action="/users/login")
+            #error
+                if error
+                    p.text-danger Error!!!
+
+            - var h1Classes = ['h3', 'mb-3', 'font-weight-normal']
+            h1(class=h1Classes) Please sign in
+
+            //-input email
+            label( for="inputEmail" class="sr-only") Email address
+            input(type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus)
+
+            //-input password
+            label(for="inputPassword" class="sr-only") Password
+            input(type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required)
+
+            //-remember Checkbox
+            - var divClasses=['checkbox', 'mb-3'];
+            div(class=divClasses)
+                label
+                    input(type="checkbox" value="remember-me")
+                    span Remember me
+
+            //-signIn button
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            button(class=buttonClass type="submit") Sign in
+
+            - var pClasses=['mt-5', 'mb-3', 'text-muted'];
+            p(class=pClasses) &copy; 2017-2018

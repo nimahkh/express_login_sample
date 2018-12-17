@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+  h1= message
+  a(class='button' href='google.com')
+
+  h2= error.status
+
+  pre #{error.stack}
